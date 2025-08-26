@@ -1,0 +1,21 @@
+[package]
+name = "atari-8bit-tools"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = { version = "1.0.100", default-features = false, features = ["std"] }
+clap = { version = "4.5.48", default-features = false, features = ["derive", "help", "std", "usage"], optional = true }
+figment = { version = "0.10.19", default-features = false, features = ["toml"], optional = true }
+regex-lite = { version = "0.1.7", default-features = false, features = ["std", "string"] }
+serde = { version = "1.0.228", default-features = false, features = ["derive"], optional = true }
+
+[features]
+default = []
+cli = ["clap", "figment", "serde"]
+
+[lints.rust]
+missing_docs = "warn"
+
+[lints.clippy]
+pedantic = "warn"
